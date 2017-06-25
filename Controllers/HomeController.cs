@@ -3,33 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TestApp4.Models;
 
 namespace TestApp4.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Authenticate()
         {
-            return View();
+            //Check authentication
+            return
+                Json(new User {name = "Thriven", email = "reddy3ven3@gmail.com", isAuthenticated = true, password = ""});
         }
 
-        public IActionResult About()
+        [HttpGet]
+        public IActionResult UserProfile(string name)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
+            //Check authentication
+            return Json(new User { name = "Thriven", email= "reddy3ven3@gmail.com", isAuthenticated = true, password = "" }
+            );
         }
     }
 }

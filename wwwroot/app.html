@@ -22,11 +22,14 @@
         </div>
     </div>
 </div>
-<div class="pageSection div-column-hundred  big-padding-bottom">
+<div class="pageSection div-column-hundred  big-padding-bottom big-padding-top">
     <div class="mainContent">
         <div class="pageContent">
-            
-            <h1>Hello {{name}}. This is your home page</h1>
+
+            <!--<h1>Hello {{name}}. This is your home page</h1>-->
+            <!--Hello <a [routerLink]="['/profile', name]">Profile</a>-->
+            <router-outlet></router-outlet>
+            <!--<h2>User name from user object from Server is : {{user.Name}}</h2>-->
         </div>
     </div>
 </div>

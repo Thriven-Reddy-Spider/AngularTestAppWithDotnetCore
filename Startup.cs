@@ -71,9 +71,9 @@ namespace TestApp4
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapSpaFallbackRoute("spa-fallback", new { controller = "home", action = "index" });
             });
