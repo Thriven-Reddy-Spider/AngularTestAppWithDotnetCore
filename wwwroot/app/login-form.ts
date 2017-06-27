@@ -1,18 +1,18 @@
 ﻿import { Component } from '@angular/core';
-import { User } from './user'
 import { UserService } from './user.service';
 import { Router } from '@angular/router';
+import { User } from './user'
 
 @Component({
     selector: 'login-form',
-    templateUrl: './login-form.html'
+    templateUrl: 'login-form.html'
 })
 export class LoginComponent {
-    user = User;
+    user = new User('', true, '', '');
 
     submitted = false;
 
-    constructor(private userService: UserService, private router: Router) {  }
+    constructor(private userService: UserService, private router: Router) { }
 
     onSubmit(inputUser: User) {
         console.log(inputUser);
@@ -25,11 +25,11 @@ export class LoginComponent {
         if (this.user.isAuthenticated)
             this.router.navigate(['/profile', this.user.name]);
         //else
-            //show error message
+        //show error message
 
     }
 
     active = true;
-    
+
     get diagnostic() { return JSON.stringify(this.user); }
 }

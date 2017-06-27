@@ -8,7 +8,7 @@ import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile.component';
 import { UserService } from './user.service';
-import {LoginComponent} from './login-form'
+import {LoginComponent} from './login-form';
 
 const routes: Routes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },

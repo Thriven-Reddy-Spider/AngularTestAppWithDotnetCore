@@ -9,7 +9,8 @@ namespace TestApp4.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Authenticate()
+        [HttpPost]
+        public IActionResult Authenticate(User user)
         {
             //Check authentication
             return

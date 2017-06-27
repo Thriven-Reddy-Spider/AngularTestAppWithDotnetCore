@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -9,7 +9,7 @@ import { User } from './user'
 
 @Injectable()
 export class UserService {
-    user : User;
+    user: User;
     constructor(private http: Http) { }
     getUserProfile(name: string): Observable<User> {
         let userDat = this.http
