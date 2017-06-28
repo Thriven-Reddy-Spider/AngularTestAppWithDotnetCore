@@ -18,18 +18,15 @@ export class LoginComponent {
         console.log(inputUser);
         console.log("Form Submitted");
         this.submitted = true;
-
+        
         this.userService.authenticateUser(inputUser)
             .subscribe(u => this.user = u);
 
+        debugger;
         if (this.user.isAuthenticated)
             this.router.navigate(['/profile', this.user.name]);
         //else
         //show error message
 
     }
-
-    active = true;
-
-    get diagnostic() { return JSON.stringify(this.user); }
 }
