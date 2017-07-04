@@ -17,16 +17,19 @@ export class LoginComponent {
     onSubmit(inputUser: User) {
         console.log(inputUser);
         console.log("Form Submitted");
-        this.submitted = true;
         
         this.userService.authenticateUser(inputUser)
-            .subscribe(u => this.user = u);
+            .subscribe(u => this.onAuthentication(u));
+    }
+
+    onAuthentication(data : any) {
+        this.user = data;
 
         debugger;
-        if (this.user.isAuthenticated)
+        if (this.user.isAuthenticated) {
+            this.submitted = true;
             this.router.navigate(['/profile', this.user.name]);
-        //else
-        //show error message
-
+        } else
+            return;
     }
 }

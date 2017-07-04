@@ -1,14 +1,22 @@
-﻿<div class="container">
-    <div [hidden]="submitted"> 
+﻿<div class="container auth-container">
+
+    <div [hidden]="submitted">
         <h1>Login</h1>
         <form #userForm="ngForm" (ngSubmit)="onSubmit(user)">
             <div class="form-group">
-                <label for="name">UserName</label>
+                <!--<app-form-errors [errors]="formErrors()">
+                </app-form-errors>-->
+                <div *ngIf="!user.isAuthenticated" class="alert alert-danger">
+                    <div [hidden]="!user.isAuthenticated">User name & password are invalid.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">User name</label>
                 <input type="text" id="name" class="form-control" required minlength="4" maxlength="24" name="name" [(ngModel)]="user.name" #name="ngModel">
                 <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
                     <div [hidden]="!name.errors.required">
                         Name is required
-                    </div>  
+                    </div>
                     <div [hidden]="!name.errors.minlength">
                         Name must be at least 4 characters long.
                     </div>
@@ -16,12 +24,12 @@
                         Name cannot be more than 24 characters long.
                     </div>
                 </div>
-                
-            </div>            
+
+            </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" class="form-control" name="password" [(ngModel)]="user.password" required #password="ngModel" type="password"/>                 
-                
+                <input id="password" class="form-control" name="password" [(ngModel)]="user.password" required #password="ngModel" type="password" />
+
                 <div *ngIf="password.errors && password.touched" class="alert alert-danger">
                     <div [hidden]="!password.errors.required">password is required</div>
                 </div>
@@ -29,7 +37,7 @@
             <button type="submit" class="btn btn-default" [disabled]="!userForm.form.valid">
                 Submit
             </button>
-            
+
         </form>
     </div>
 </div>

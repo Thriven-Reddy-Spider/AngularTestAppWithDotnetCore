@@ -1,41 +1,70 @@
 ﻿
 
-<div class="headerSection">
-    <div class="mainContent">
-        <div class="nav-global">
-            <nav>
-                <ul class="nav-left logo" style="list-style-type: none">
-                    <li class="nav-dropdown">
-                        <a style="margin-left: -35px; margin-top: 5px; opacity: 1;" href="">
-                            <div class="App_Logo">LOGO</div>
-                        </a>
+<div class="main-wrapper">
+    <header class="header">
+        <div class="mainContent">
+            <div class="nav-global">
+                <nav>
+                    <ul class="nav-left logo" style="list-style-type: none">
+                        <li class="nav-dropdown">
+                            <a style="margin-left: -35px; margin-top: 5px; opacity: 1;" href="">
+                                <div class="App_Logo">HOME</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--<ul class="nav-right login-detail" style="list-style-type: none">
+                        <li class="nav-dropdown">
+                            Hello {{name}}
+                        </li>
+                    </ul>-->
+                </nav>
+            </div>
+            <div class="div-column-hundred big-padding-bottom big-padding-top">
+            </div>
+        </div>
+    </header>
+    <!--<div class="pageSection div-column-hundred  big-padding-bottom big-padding-top">
+        <div class="mainContent">
+            <div class="pageContent">-->
+    <aside class="sidebar">
+        <div class="sidebar-container">
+            <nav class="menu">
+                <ul class="nav metismenu" id="sidebar-menu">
+                    <li class="active">
+                        <a routeLink ="/login"> <i class="fa fa-home"></i> Login & Profile </a>
                     </li>
-                </ul>
-                <ul class="nav-right login-detail" style="list-style-type: none">
-                    <li class="nav-dropdown">
-                        Hello {{name}}
+                    <li>
+                        <a href="https://github.com/modularcode/modular-admin-html"> <i class="fa fa-github-alt"></i>Test</a>
                     </li>
                 </ul>
             </nav>
         </div>
-        <div class="div-column-hundred big-padding-bottom big-padding-top">
+        <footer class="sidebar-footer">Sidebar footer</footer>
+    </aside>
+    <article class="content dashboard-page">
+        <router-outlet></router-outlet>
+    </article>
+    <footer class="footer">
+        <div class="footer-block author">
+            <ul>
+                <li> created by <a href="https://github.com/modularcode">Thriven</a> </li>
+                <li> <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">About</a> </li>
+            </ul>
         </div>
-    </div>
-</div>
-<div class="pageSection div-column-hundred  big-padding-bottom big-padding-top">
-    <div class="mainContent">
-        <div class="pageContent">
+    </footer>
+                
 
-            <!--<h1>Hello {{name}}. This is your home page</h1>-->
-            Hello <a [routerLink]="['/profile', name]">Profile</a>
-            <router-outlet></router-outlet>
-            <!--<h2>User name from user object from Server is : {{user.Name}}</h2>-->
+                <!--<h1>Hello {{name}}. This is your home page</h1>-->
+                <!--<h2>User name from user object from Server is : {{user.Name}}</h2>-->
+            <!--</div>
         </div>
-    </div>
+    </div>-->
+
 </div>
-<div class="footerSection">
+
+<!--<div class="footerSection">
     <div class="mainContent">
 
     </div>
-</div>
+</div>-->
 

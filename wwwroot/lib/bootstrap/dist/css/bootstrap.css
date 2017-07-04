@@ -2550,7 +2550,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 40%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -5095,6 +5095,7 @@ a.thumbnail.active {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+  width: 40%;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;
@@ -6758,3 +6759,12 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442; /* red */
+}
