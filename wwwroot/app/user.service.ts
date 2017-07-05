@@ -19,10 +19,12 @@ export class UserService {
         return userDat;
     }
 
-    //private headers = new Headers({ 'Content-Type': 'application/json' });
+    private headers = new Headers({ 'Content-Type': 'application/json' });
     authenticateUser(loginUser: User): Observable<User> {
+        debugger;
+        var test = JSON.stringify(loginUser);
         let userDat = this.http
-            .post('Home/Authenticate', JSON.stringify(loginUser)//, { headers: this.headers }
+            .post('Home/Authenticate', JSON.stringify(loginUser), { headers: this.headers }
             )
             .map(response => response.json())
             .catch(this.handleError);
